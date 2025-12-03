@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root{
+    /* Background Color */
+    --bg--primary-color: #161616ff;
+    --bg--fill-color: #eeebebff;
+    --bg--food-color: #e84545ff;
+
+    /* Text Color */
+    --text--primary-color: #fffefecc;
+
+    /* spacing variables */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 40px;
+    --space-3xl: 48px;
+
+    /* Border color */
+    --border--primary-color: #333333ff;
+
+    /* Border radius */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-xl: 16px;
+    --border-radius-2xl: 24px;
+}
+
+body {
+    background-color: var(--bg--primary-color);
+    color: var(--text--primary-color);
+}
+
+main,section{
+    width: 100%;
+    height: 100%;
+
+}
+
+.btn{
+    padding: var(--space-sm) var(--space-md);
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+section{
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border--primary-color);
+    border-radius: var(--border-radius-md);
+}
+
+.board{
+    border: 1px solid var(--border--primary-color);
+    flex-grow: 1;
+    display: grid;            
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
+}
+
+.block{
+    border-radius: 50%;
+    border: 1px solid var(--border--primary-color);
+}
+
+.fill{
+    background-color: var(--bg--fill-color);
+}
+
+.food{
+    background-color: var(--bg--food-color);
+}
+
+.modal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: #35353587;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.modal .start-game, .modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.modal .game-over {
+    display: none;
+}
